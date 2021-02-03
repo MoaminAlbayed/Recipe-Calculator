@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class TotalRecipesOutputComponent implements OnInit {
 
-  PAL_Percentage = 0.37;
-  CA_Percentage = 0.13;
-  TA_Percentage = 0.39;
-  PA_Percentage = 0.10;
-  OR_Percentage = 0.005;
-  RO_Percentage = 0.005;
+  PAL_Percentage = 37;
+  CA_Percentage = 13;
+  TA_Percentage = 39;
+  PA_Percentage = 10;
+  OR_Percentage = 0.5;
+  RO_Percentage = 0.5;
 
   remainingPAL: number;
   remainingCA: number;
@@ -29,27 +29,33 @@ export class TotalRecipesOutputComponent implements OnInit {
       alert("All amount values must be higher then 0")
       return;
     }
-    if (this.PAL_Percentage+this.CA_Percentage+this.TA_Percentage+this.PA_Percentage+this.OR_Percentage+this.RO_Percentage!=1){
+    if (this.PAL_Percentage+this.CA_Percentage+this.TA_Percentage+this.PA_Percentage+this.OR_Percentage+this.RO_Percentage!=100){
       alert("All percentages must add up to 100")
       return;
     }
-    const PAL_Result = form.value['PAL'] / (this.PAL_Percentage)
-    const CA_Result = form.value['CA'] / (this.CA_Percentage )
-    const TA_Result = form.value['TA'] / (this.TA_Percentage )
-    const PA_Result = form.value['PA'] / (this.PA_Percentage )
-    const OR_Result = form.value['OR'] / (this.OR_Percentage )
-    const RO_Result = form.value['RO'] / (this.RO_Percentage )
+    // this.PAL_Percentage/=100;
+    // this.CA_Percentage/=100;
+    // this.TA_Percentage/=100;
+    // this.PA_Percentage/=100;
+    // this.OR_Percentage/=100;
+    // this.RO_Percentage/=100;
+    const PAL_Result = form.value['PAL'] / (this.PAL_Percentage/100)
+    const CA_Result = form.value['CA'] / (this.CA_Percentage/100 )
+    const TA_Result = form.value['TA'] / (this.TA_Percentage/100 )
+    const PA_Result = form.value['PA'] / (this.PA_Percentage/100 )
+    const OR_Result = form.value['OR'] / (this.OR_Percentage/100 )
+    const RO_Result = form.value['RO'] / (this.RO_Percentage/100 )
 
 
     this.totalCount = Math.floor(Math.min(PAL_Result, CA_Result, TA_Result, PA_Result, OR_Result, RO_Result));
  
 
-    this.remainingPAL = +(form.value["PAL"] - (this.PAL_Percentage ) * this.totalCount).toFixed(3)
-    this.remainingCA = +(form.value["CA"] - (this.CA_Percentage ) * this.totalCount).toFixed(3)
-    this.remainingPA = +(form.value["PA"] - (this.PA_Percentage ) * this.totalCount).toFixed(3)
-    this.remainingOR = +(form.value["OR"] - (this.OR_Percentage ) * this.totalCount).toFixed(3)
-    this.remainingTA = +(form.value["TA"] - (this.TA_Percentage ) * this.totalCount).toFixed(5)
-    this.remainingRO = +(form.value["RO"] - (this.RO_Percentage ) * this.totalCount).toFixed(3)
+    this.remainingPAL = +(form.value["PAL"] - (this.PAL_Percentage/100 ) * this.totalCount).toFixed(3)
+    this.remainingCA = +(form.value["CA"] - (this.CA_Percentage/100 ) * this.totalCount).toFixed(3)
+    this.remainingPA = +(form.value["PA"] - (this.PA_Percentage/100 ) * this.totalCount).toFixed(3)
+    this.remainingOR = +(form.value["OR"] - (this.OR_Percentage/100 ) * this.totalCount).toFixed(3)
+    this.remainingTA = +(form.value["TA"] - (this.TA_Percentage/100 ) * this.totalCount).toFixed(5)
+    this.remainingRO = +(form.value["RO"] - (this.RO_Percentage/100 ) * this.totalCount).toFixed(3)
   }
 
   clearForm(form: NgForm) {
