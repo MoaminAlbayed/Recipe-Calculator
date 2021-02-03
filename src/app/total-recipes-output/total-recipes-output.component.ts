@@ -33,12 +33,7 @@ export class TotalRecipesOutputComponent implements OnInit {
       alert("All percentages must add up to 100")
       return;
     }
-    // this.PAL_Percentage/=100;
-    // this.CA_Percentage/=100;
-    // this.TA_Percentage/=100;
-    // this.PA_Percentage/=100;
-    // this.OR_Percentage/=100;
-    // this.RO_Percentage/=100;
+    
     const PAL_Result = form.value['PAL'] / (this.PAL_Percentage/100)
     const CA_Result = form.value['CA'] / (this.CA_Percentage/100 )
     const TA_Result = form.value['TA'] / (this.TA_Percentage/100 )
