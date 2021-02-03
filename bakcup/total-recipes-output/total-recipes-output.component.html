@@ -4,55 +4,48 @@
       <thead>
         <tr>
           <th scope="col"> Material</th>
-          <th scope="col"> Percentage</th>
           <th scope="col"> Amount Available (Kg)</th>
           <th scope="col"> Remaining (Kg)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">PAL</th>
-          <td><input type="number" min="0" class="form-control" name="PAL_Percentage" required [(ngModel)]="PAL_Percentage"></td>
+          <th scope="row">PAL (37%)</th>
           <td><input type="number" min="0" class="form-control" name="PAL" required ngModel></td>
           <td>
             <p>{{remainingPAL}}</p>
           </td>
         </tr>
         <tr>
-          <th scope="row">CA</th>
-          <td><input type="number" min="0" class="form-control" name="CA_Percentage" required [(ngModel)]="CA_Percentage"></td>
+          <th scope="row">CA (13%)</th>
           <td><input type="number" min="0" class="form-control" name="CA" required ngModel></td>
           <td>
             {{remainingCA}}
           </td>
         </tr>
         <tr>
-          <th scope="row">TA</th>
-          <td><input type="number" min="0" class="form-control" name="TA_Percentage" required [(ngModel)]="TA_Percentage"></td>
+          <th scope="row">TA (39%)</th>
           <td><input type="number" min="0" class="form-control" name="TA" required ngModel></td>
           <td>
             {{remainingTA}}
           </td>
         </tr>
         <tr>
-          <th scope="row">PA</th>
-          <td><input type="number" min="0" class="form-control" name="PA_Percentage" required [(ngModel)]="PA_Percentage"></td>
+          <th scope="row">PA (10%)</th>
           <td><input type="number" min="0" class="form-control" name="PA" required ngModel></td>
           <td>
             {{remainingPA}}
           </td>
         </tr>
         <tr>
-          <th scope="row">OR</th>
-          <td><input type="number" min="0" class="form-control" name="OR_Percentage" required [(ngModel)]="OR_Percentage"></td>
+          <th scope="row">OR (0.5%)</th>
           <td><input type="number" min="0" class="form-control" name="OR" required ngModel></td>
           <td>
             {{remainingOR}}
           </td>
         </tr>
         <tr>
-          <th scope="row">RO</th>
-          <td><input type="number" min="0" class="form-control" name="RO_Percentage" required [(ngModel)]="RO_Percentage"></td>
+          <th scope="row">RO (0.5%)</th>
           <td><input type="number" min="0" class="form-control" name="RO" required ngModel></td>
           <td>
             {{remainingRO}}

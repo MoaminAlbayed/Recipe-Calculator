@@ -26,11 +26,7 @@ export class TotalRecipesOutputComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if(form.value['PAL']*form.value['CA']*form.value['TA']*form.value['PA']*form.value['OR']*form.value['RO']<=0){
-      alert("All amount values must be higher then 0")
-      return;
-    }
-    if (this.PAL_Percentage+this.CA_Percentage+this.TA_Percentage+this.PA_Percentage+this.OR_Percentage+this.RO_Percentage!=1){
-      alert("All percentages must add up to 100")
+      alert("All Values Must be higher then 0")
       return;
     }
     const PAL_Result = form.value['PAL'] / (this.PAL_Percentage)
