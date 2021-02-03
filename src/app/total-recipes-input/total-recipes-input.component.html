@@ -10,42 +10,55 @@
             <thead>
                 <tr>
                     <th scope="col"> Material</th>
+                    <th scope="col"> Percentage</th>
                     <th scope="col">Amount (Kg)</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">PAL (37%)</th>
+                    <th scope="row">PAL</th>
+                    <td><input type="number" min="0" class="form-control" name="PAL_Percentage" required [(ngModel)]="PAL_Percentage"></td>
+          
                     <td>
                         {{remainingPAL}}
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">CA (13%)</th>
+                    <th scope="row">CA</th>
+                    <td><input type="number" min="0" class="form-control" name="CA_Percentage" required [(ngModel)]="CA_Percentage"></td>
+          
                     <td>
                         {{remainingCA}}
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">TA (39%)</th>
+                    <th scope="row">TA</th>
+                    <td><input type="number" min="0" class="form-control" name="TA_Percentage" required [(ngModel)]="TA_Percentage"></td>
+          
                     <td>
                         {{remainingTA}}
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">PA (10%)</th>
+                    <th scope="row">PA</th>
+                    <td><input type="number" min="0" class="form-control" name="PA_Percentage" required [(ngModel)]="PA_Percentage"></td>
+          
                     <td>
                         {{remainingPA}}
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">OR (0.5%)</th>
+                    <th scope="row">OR</th>
+                    <td><input type="number" min="0" class="form-control" name="OR_Percentage" required [(ngModel)]="OR_Percentage"></td>
+          
                     <td>
                         {{remainingOR}}
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">RO (0.5%)</th>
+                    <th scope="row">RO</th>
+                    <td><input type="number" min="0" class="form-control" name="RO_Percentage" required [(ngModel)]="RO_Percentage"></td>
+          
                     <td>
                         {{remainingRO}}
                     </td>
@@ -57,7 +70,7 @@
               <button class="btn btn-success" type="submit" [disabled]="!f.valid">Calculate</button>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="Second group">
-              <button class="btn btn-danger" type="button" [disabled]="!f.dirty" (click)="clearForm(f)">Clear</button>
+              <button class="btn btn-danger" type="button" (click)="clearForm(f)">Clear</button>
             </div>
             <div class="btn-group mr-2" role="group" aria-label="third group">
               <button class="btn btn-primary" type="button" (click)="switchInput()">Switch Input</button>

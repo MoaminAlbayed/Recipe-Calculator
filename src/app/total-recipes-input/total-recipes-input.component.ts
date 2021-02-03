@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 export class TotalRecipesInputComponent implements OnInit {
 
-  PAL_Percentage = 0.37;
-  CA_Percentage = 0.13;
-  TA_Percentage = 0.39;
-  PA_Percentage = 0.10;
-  OR_Percentage = 0.005;
-  RO_Percentage = 0.005;
+  PAL_Percentage = 37;
+  CA_Percentage = 13;
+  TA_Percentage = 39;
+  PA_Percentage = 10;
+  OR_Percentage = 0.5;
+  RO_Percentage = 0.5;
 
   remainingPAL: number;
   remainingCA: number;
@@ -30,14 +30,21 @@ export class TotalRecipesInputComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
-    
-    this.remainingPAL = +(form.value["totalCount"] * this.PAL_Percentage).toFixed(3)
-    this.remainingCA = +(form.value["totalCount"] * this.CA_Percentage).toFixed(3)
-    this.remainingTA = +(form.value["totalCount"] * this.TA_Percentage).toFixed(3)
-    this.remainingPA = +(form.value["totalCount"] * this.PA_Percentage).toFixed(3)
-    this.remainingOR = +(form.value["totalCount"] * this.OR_Percentage).toFixed(3)
-    this.remainingRO = +(form.value["totalCount"] * this.RO_Percentage).toFixed(3)
+    if (form.value["totalCount"]<1){
+      alert("Total count must be larger than zero")
+      return;
+    }
+    if (this.PAL_Percentage+this.CA_Percentage+this.TA_Percentage+this.PA_Percentage+this.OR_Percentage+this.RO_Percentage!=100){
+      alert("All percentages must add up to 100")
+      return;
+    }
+
+    this.remainingPAL = +(form.value["totalCount"] * this.PAL_Percentage/100).toFixed(3)
+    this.remainingCA = +(form.value["totalCount"] * this.CA_Percentage/100).toFixed(3)
+    this.remainingTA = +(form.value["totalCount"] * this.TA_Percentage/100).toFixed(3)
+    this.remainingPA = +(form.value["totalCount"] * this.PA_Percentage/100).toFixed(3)
+    this.remainingOR = +(form.value["totalCount"] * this.OR_Percentage/100).toFixed(3)
+    this.remainingRO = +(form.value["totalCount"] * this.RO_Percentage/100).toFixed(3)
 
   }
   clearForm(form: NgForm) {
